@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net6.0-windows</TargetFramework>
+        <UseWindowsForms>true</UseWindowsForms>
+        <ApplicationIcon>NdiPresetSelector.ico</ApplicationIcon>
+        <Title>NDI Preset Selector</Title>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\NdiCommander\NdiCommander.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="NdiPresetSelector.ico" />
+    </ItemGroup>
+</Project>
