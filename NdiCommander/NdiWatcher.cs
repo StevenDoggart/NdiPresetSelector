@@ -19,7 +19,7 @@ internal class NdiWatcher : INdiWatcher
     public event EventHandler SourcesChanged;
 
 
-    public IReadOnlyList<INdiSource> Sources 
+    public IReadOnlyList<INdiSource> Sources
     {
         get
         {
@@ -31,7 +31,7 @@ internal class NdiWatcher : INdiWatcher
     }
 
 
-    public bool Watching 
+    public bool Watching
     {
         get
         {
@@ -107,6 +107,7 @@ internal class NdiWatcher : INdiWatcher
             {
                 uint count = 0;
                 IntPtr sourcesPtr = NdiLib.find_get_current_sources(findInstancePtr, ref count);
+                bool changed = false;
                 for (int i = 0; i < count; i++)
                 {
                     IntPtr p = IntPtr.Add(sourcesPtr, (i * SourceSizeInBytes));  // source ptr + (index * size of a source)
@@ -118,13 +119,16 @@ internal class NdiWatcher : INdiWatcher
                     // They might be selected and come back when the connection is restored.
                     lock (_sources)
                     {
-                        if (!_sources.Any(s => s.Name == name))
+                        INdiSource source = _sources.FirstOrDefault(s => s.Name == name);
+                        if (source == null)
                         {
                             _sources.Add(_ndiSourceFactory.NewNdiSource(_receiverName, name));
-                            OnSourcesChanged();
+                            changed = true;
                         }
                     }
                 }
+                if (changed)
+                    OnSourcesChanged();
             }
         }
     }
@@ -152,7 +156,7 @@ internal class NdiWatcher : INdiWatcher
 public interface INdiWatcher : IDisposable
 {
     /// <summary>
-    ///     Raised when the list of NDI sources listed in the the <see cref="Sources"/> property has changed
+    ///     Raised when the list of NDI sources in the the <see cref="Sources"/> property has changed
     /// </summary>
     public event EventHandler SourcesChanged;
 

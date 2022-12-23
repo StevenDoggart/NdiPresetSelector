@@ -128,22 +128,32 @@ public partial class MainForm : Form
 
     private void RefreshContextMenu()
     {
-        string savedSourceName = null;
-        foreach (INdiSource source in _ndiWatcher.Sources.Where(s => s.SupportsPtz))
+        lock (_refreshContextMenuSyncRoot)
         {
-            if (!_contextMenu.Items.OfType<ToolStripMenuItem>().Any(i => i.Tag == source))
+            INdiSource[] previousPtzSources = _contextMenu.Items
+                .OfType<ToolStripMenuItem>()
+                .Select(i => i.Tag)
+                .OfType<INdiSource>()
+                .ToArray();
+            INdiSource[] newPtzSources = _ndiWatcher.Sources
+                .Where(s => s.SupportsPtz)
+                .Except(previousPtzSources)
+                .ToArray();
+            if (newPtzSources.Any())
             {
-                if(savedSourceName == null)
-                    savedSourceName = LoadSourceSelection();
-                ToolStripMenuItem item = new(source.Name);
-                item.Click += NdiSourceMenuItemClickEventHandler;
-                item.Tag = source;
-                _contextMenu.Items.Insert(0, item);
-                _noSourcesFoundMenuItem.Visible = false;
-                if (source.Name == savedSourceName)
+                string savedSourceName = LoadSourceSelection();
+                foreach (INdiSource ptzSource in newPtzSources)
                 {
-                    item.Checked = true;
-                    _selectedSource = source;
+                    ToolStripMenuItem item = new(ptzSource.Name);
+                    item.Click += NdiSourceMenuItemClickEventHandler;
+                    item.Tag = ptzSource;
+                    _contextMenu.Items.Insert(0, item);
+                    _noSourcesFoundMenuItem.Visible = false;
+                    if (ptzSource.Name == savedSourceName)
+                    {
+                        item.Checked = true;
+                        _selectedSource = ptzSource;
+                    }
                 }
             }
         }
@@ -172,4 +182,5 @@ public partial class MainForm : Form
     private INdiWatcher _ndiWatcher;
 
     private INdiSource _selectedSource;
+    private object _refreshContextMenuSyncRoot = new();
 }

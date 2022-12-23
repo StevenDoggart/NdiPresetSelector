@@ -1,4 +1,6 @@
-﻿namespace NdiPresetSelector
+﻿#pragma warning disable CS0169
+
+namespace NdiPresetSelector
 {
     partial class MainForm
     {

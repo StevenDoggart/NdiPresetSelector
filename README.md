@@ -32,11 +32,8 @@ uses the NDILib library for Windows which is provided with the NDI SDK (`Process
 or `Processing.NDI.Lib.x86.dll`).
 
 ## Installation
-There's currently no installer for the application, but it's easy to install manually.  Simply 
-build it, copy the binaries into a folder on the computer (e.g. 
-`C:\Program Files\NdiPresetSelector`) and then run it.  It does require .NET 6 as a prerequisite, 
-so if you don't already have that installed, you'll need to do so.  Once installed, it's 
-recommended that you add `NdiPresetSelector.exe` as an application that's run at system start up.
+A convenient setup utility is provided for each 
+[Release](https://github.com/StevenDoggart/NdiPresetSelector/releases) of this repository.
 
 ## Attributions
 The icon for this application is taken from the Captiva Icons created by bokehlicia, as found on 

@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentat
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "NdiPresetSelectorSetup", "NdiPresetSelectorSetup\NdiPresetSelectorSetup.vdproj", "{8100A233-E3BA-4A45-A6E6-1A2F6864CF1A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,12 @@ Global
 		{C280CBAE-D715-4F5B-BC48-E312CA071414}.Release|x64.Build.0 = Release|Any CPU
 		{C280CBAE-D715-4F5B-BC48-E312CA071414}.Release|x86.ActiveCfg = Release|Any CPU
 		{C280CBAE-D715-4F5B-BC48-E312CA071414}.Release|x86.Build.0 = Release|Any CPU
+		{8100A233-E3BA-4A45-A6E6-1A2F6864CF1A}.Debug|Any CPU.ActiveCfg = Debug
+		{8100A233-E3BA-4A45-A6E6-1A2F6864CF1A}.Debug|x64.ActiveCfg = Debug
+		{8100A233-E3BA-4A45-A6E6-1A2F6864CF1A}.Debug|x86.ActiveCfg = Debug
+		{8100A233-E3BA-4A45-A6E6-1A2F6864CF1A}.Release|Any CPU.ActiveCfg = Release
+		{8100A233-E3BA-4A45-A6E6-1A2F6864CF1A}.Release|x64.ActiveCfg = Release
+		{8100A233-E3BA-4A45-A6E6-1A2F6864CF1A}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

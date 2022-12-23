@@ -1,4 +1,6 @@
-﻿namespace NdiPresetSelector
+﻿#pragma warning disable CS0169
+
+namespace NdiPresetSelector
 {
     partial class AboutForm
     {
@@ -62,7 +64,7 @@
             // 
             // _authorLabel
             // 
-            this._authorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this._authorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this._authorLabel.Location = new System.Drawing.Point(12, 197);
             this._authorLabel.Name = "_authorLabel";
@@ -96,7 +98,7 @@
             this._versionLabel.Name = "_versionLabel";
             this._versionLabel.Size = new System.Drawing.Size(350, 23);
             this._versionLabel.TabIndex = 4;
-            this._versionLabel.Text = "1.0";
+            this._versionLabel.Text = "1.1";
             this._versionLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // _linkLabel
