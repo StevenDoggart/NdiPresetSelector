@@ -32,8 +32,10 @@ uses the NDILib library for Windows which is provided with the NDI SDK (`Process
 or `Processing.NDI.Lib.x86.dll`).
 
 ## Installation
-A convenient setup utility is provided for each 
-[Release](https://github.com/StevenDoggart/NdiPresetSelector/releases) of this repository.
+A convenient setup utility is provided for each release of this repository.  The setup utility for 
+the latest version of the software is 
+[NdiPresetSelectorSetup_1.1.zip](https://github.com/StevenDoggart/NdiPresetSelector/releases/download/v1.1/NdiPresetSelectorSetup_1.1.zip).  
+Download the file, unzip it, and run `NdiPresetSelectorSetup.exe`.
 
 ## Attributions
 The icon for this application is taken from the Captiva Icons created by bokehlicia, as found on 
