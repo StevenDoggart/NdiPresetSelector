@@ -41,6 +41,12 @@ the latest version of the software is:
 
 To install it, unzip the file and run `NdiPresetSelectorSetup.exe`.
 
+## Tips
+If your cameras fail to show in the context menu, try disabling your firewall and restarting the 
+NDI Preset Selector.  If the cameras, show up, it was the firewall that was blocking communication.
+You can then try to reactivate your firewall and adjust its settings until the cameras are 
+discoverable.
+
 ## Attributions
 The icon for this application is taken from the Captiva Icons created by bokehlicia, as found on 
 https://iconarchive.com
